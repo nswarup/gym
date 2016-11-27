@@ -9,21 +9,21 @@ import sys
 [-0.34487815869867666, -2.4511489979372088, -0.20892458535656977, -2.5936806785031399]
 """
 
+bound = 2**16
+
 
 # Set-up
 env = gym.make('CartPole-v0')
 outdir = sys.argv[1]
 
 basis = 3
-# initial_epsilon = 0  # probability of choosing a random action (changed from original value of 0.0)
+# initial_epsilon = 0  # probability of choosing a random action
 alpha = 0.001  # learning rate
 lambda_ = 0.9  # trace decay rate
 gamma = 1.0  # discount rate
 
 M = env.action_space.n
-N = 2 * (3 + 1)**5
-
-# TODO: Normalize the state variables from -1 to 1
+N = 2 * (basis + 1)**5
 
 
 def get_c(goal, choices, current=0, storage=[]):
@@ -57,18 +57,17 @@ def q_value(s, a, c, theta):
     x = np.append(s, [a])
     val = 0
     for i in xrange(N/2):
-        cos = theta[2*i] * math.cos(math.pi * np.dot(c[i], x))
-        sin = theta[2*i+1] * math.sin(math.pi * np.dot(c[i], x))
-        val += cos + sin
+        val += theta[2*i] * math.cos(math.pi * np.dot(c[i], x)) + theta[2*i+1] * math.sin(math.pi * np.dot(c[i], x))
     return val
+
 
 def normalize(s):
     s[0] /= 3.
     s[1] /= 4.
     s[2] /= 0.21
     s[3] /= 3.
-
     return s
+
 
 def best_action(s, c, theta):
     """
@@ -96,9 +95,7 @@ def best_q(s, c, theta):
 
     :return: the highest q score possible given the possible actions.
     """
-    left_val = q_value(s, 0, c, theta)
-    right_val = q_value(s, 1, c, theta)
-    return max(left_val, right_val)
+    return max(q_value(s, 0, c, theta), q_value(s, 1, c, theta))
 
 
 def update_coef(new_s, new_a, s, a, c, theta, r):
@@ -116,18 +113,13 @@ def update_coef(new_s, new_a, s, a, c, theta, r):
     x = np.append(s, [a])
     theta_new = np.zeros(N)
 
-    temp1 = q_value(new_s, new_a, c, theta)
-    temp2 = q_value(s, a, c, theta)
+    temp = alpha * (r + gamma * q_value(new_s, new_a, c, theta) - q_value(s, a, c, theta))
     for i in xrange(N):
         if i % 2 == 0:
-            deriv = -theta[i] * math.sin(math.pi * np.dot(c[i/2], x))
+            deriv = math.cos(math.pi * np.dot(c[i/2], x))
         else:
-            deriv = theta[i] * math.cos(math.pi * np.dot(c[i/2], x))
-
-        theta_new[i] = theta[i] + alpha * (r + gamma * temp1 - temp2) * deriv
-        if theta_new[i] > 1024:
-            theta_new[i] = 1024
-
+            deriv = math.sin(math.pi * np.dot(c[i/2], x))
+        theta_new[i] = min(max(0, theta[i] + temp * deriv), 100)
     return theta_new
 
 
@@ -144,19 +136,18 @@ def main():
     for episode_num in xrange(2000):
         print "begin episode:", episode_num
         # print episode_num, episode(epsilon, theta, env.spec.timestep_limit)
-        s = normalize(env.reset())
-        action = best_action(s, c, theta)
+        last_state = normalize(env.reset())
+        last_action = best_action(last_state, c, theta)
         total_reward = 0
         done = False
         while not done:
-            new_s, reward, done, _ = env.step(action)
-            new_s = normalize(new_s)
-            new_a = best_action(new_s, c, theta)
-            theta = update_coef(new_s, new_a, s, action, c, theta, reward)
+            state, reward, done, _ = env.step(last_action)
+            state = normalize(state)
+            action = best_action(state, c, theta)
+            theta = update_coef(state, action, last_state, last_action, c, theta, reward)
             total_reward += reward
-            s = new_s
-            action = new_a
-
+            last_state = state
+            last_action = action
         print "end episode:", episode_num, total_reward
 
     env.monitor.close()

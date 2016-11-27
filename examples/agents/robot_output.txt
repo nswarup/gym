@@ -1,0 +1,208 @@
+start environment
+setup done
+begin episode: 0
+[2016-11-26 23:38:23,033] Starting new video recorder writing to /tmp/cartpole/openaigym.video.0.26983.video000000.mp4
+end episode: 0 10.0
+begin episode: 1
+[2016-11-26 23:38:25,134] Starting new video recorder writing to /tmp/cartpole/openaigym.video.0.26983.video000001.mp4
+end episode: 1 200.0
+begin episode: 2
+end episode: 2 200.0
+begin episode: 3
+end episode: 3 200.0
+begin episode: 4
+end episode: 4 200.0
+begin episode: 5
+end episode: 5 124.0
+begin episode: 6
+end episode: 6 200.0
+begin episode: 7
+end episode: 7 200.0
+begin episode: 8
+[2016-11-26 23:39:07,393] Starting new video recorder writing to /tmp/cartpole/openaigym.video.0.26983.video000008.mp4
+end episode: 8 200.0
+begin episode: 9
+end episode: 9 200.0
+begin episode: 10
+end episode: 10 97.0
+begin episode: 11
+end episode: 11 200.0
+begin episode: 12
+end episode: 12 200.0
+begin episode: 13
+end episode: 13 200.0
+begin episode: 14
+end episode: 14 131.0
+begin episode: 15
+end episode: 15 200.0
+begin episode: 16
+end episode: 16 200.0
+begin episode: 17
+end episode: 17 200.0
+begin episode: 18
+end episode: 18 200.0
+begin episode: 19
+end episode: 19 200.0
+begin episode: 20
+end episode: 20 200.0
+begin episode: 21
+end episode: 21 200.0
+begin episode: 22
+end episode: 22 200.0
+begin episode: 23
+end episode: 23 200.0
+begin episode: 24
+end episode: 24 200.0
+begin episode: 25
+end episode: 25 200.0
+begin episode: 26
+end episode: 26 200.0
+begin episode: 27
+[2016-11-26 23:40:59,575] Starting new video recorder writing to /tmp/cartpole/openaigym.video.0.26983.video000027.mp4
+end episode: 27 200.0
+begin episode: 28
+end episode: 28 200.0
+begin episode: 29
+end episode: 29 137.0
+begin episode: 30
+end episode: 30 200.0
+begin episode: 31
+end episode: 31 200.0
+begin episode: 32
+end episode: 32 200.0
+begin episode: 33
+end episode: 33 200.0
+begin episode: 34
+end episode: 34 200.0
+begin episode: 35
+end episode: 35 200.0
+begin episode: 36
+end episode: 36 200.0
+begin episode: 37
+end episode: 37 137.0
+begin episode: 38
+end episode: 38 200.0
+begin episode: 39
+end episode: 39 200.0
+begin episode: 40
+end episode: 40 200.0
+begin episode: 41
+end episode: 41 200.0
+begin episode: 42
+end episode: 42 200.0
+begin episode: 43
+end episode: 43 200.0
+begin episode: 44
+end episode: 44 200.0
+begin episode: 45
+end episode: 45 200.0
+begin episode: 46
+end episode: 46 200.0
+begin episode: 47
+end episode: 47 200.0
+begin episode: 48
+end episode: 48 138.0
+begin episode: 49
+end episode: 49 200.0
+begin episode: 50
+end episode: 50 200.0
+begin episode: 51
+end episode: 51 200.0
+begin episode: 52
+end episode: 52 200.0
+begin episode: 53
+end episode: 53 138.0
+begin episode: 54
+end episode: 54 200.0
+begin episode: 55
+end episode: 55 200.0
+begin episode: 56
+end episode: 56 200.0
+begin episode: 57
+end episode: 57 200.0
+begin episode: 58
+end episode: 58 200.0
+begin episode: 59
+end episode: 59 14.0
+begin episode: 60
+end episode: 60 200.0
+begin episode: 61
+end episode: 61 200.0
+begin episode: 62
+end episode: 62 200.0
+begin episode: 63
+end episode: 63 200.0
+begin episode: 64
+[2016-11-26 23:45:01,900] Starting new video recorder writing to /tmp/cartpole/openaigym.video.0.26983.video000064.mp4
+end episode: 64 200.0
+begin episode: 65
+end episode: 65 200.0
+begin episode: 66
+end episode: 66 200.0
+begin episode: 67
+end episode: 67 200.0
+begin episode: 68
+end episode: 68 200.0
+begin episode: 69
+end episode: 69 200.0
+begin episode: 70
+end episode: 70 200.0
+begin episode: 71
+end episode: 71 200.0
+begin episode: 72
+end episode: 72 200.0
+begin episode: 73
+end episode: 73 200.0
+begin episode: 74
+end episode: 74 200.0
+begin episode: 75
+end episode: 75 139.0
+begin episode: 76
+end episode: 76 200.0
+begin episode: 77
+end episode: 77 200.0
+begin episode: 78
+end episode: 78 200.0
+begin episode: 79
+end episode: 79 200.0
+begin episode: 80
+end episode: 80 200.0
+begin episode: 81
+end episode: 81 200.0
+begin episode: 82
+end episode: 82 200.0
+begin episode: 83
+end episode: 83 200.0
+begin episode: 84
+end episode: 84 138.0
+begin episode: 85
+end episode: 85 200.0
+begin episode: 86
+end episode: 86 200.0
+begin episode: 87
+end episode: 87 200.0
+begin episode: 88
+end episode: 88 200.0
+begin episode: 89
+end episode: 89 200.0
+begin episode: 90
+end episode: 90 200.0
+begin episode: 91
+end episode: 91 200.0
+begin episode: 92
+end episode: 92 200.0
+begin episode: 93
+end episode: 93 200.0
+begin episode: 94
+end episode: 94 200.0
+begin episode: 95
+end episode: 95 200.0
+begin episode: 96
+end episode: 96 200.0
+begin episode: 97
+end episode: 97 200.0
+begin episode: 98
+end episode: 98 200.0
+begin episode: 99
+end episode: 99 200.0
+begin episode: 100
