@@ -22,7 +22,6 @@ alpha = 0.001  # learning rate
 lambda_ = 0.9  # trace decay rate
 gamma = 1.0  # discount rate
 
-M = env.action_space.n
 N = 2 * (basis + 1)**5
 
 
@@ -85,17 +84,6 @@ def best_action(s, c, theta):
         return 0
     else:
         return 1
-
-
-def best_q(s, c, theta):
-    """
-    :param s: list of state variables
-    :param c: list of N/2 vectors of dimension 5
-    :param theta: vector of dimension N
-
-    :return: the highest q score possible given the possible actions.
-    """
-    return max(q_value(s, 0, c, theta), q_value(s, 1, c, theta))
 
 
 def update_coef(new_s, new_a, s, a, c, theta, r):
